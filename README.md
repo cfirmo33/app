@@ -3,11 +3,6 @@
 ## Instalação
 * install nodejs
 * npm install -g cordova ionic
-* ionic plugin add cordova-plugin-inappbrowser
-* ionic plugin add cordova-sqlite-storage
-* ionic plugin add onesignal-cordova-plugin
-* ionic plugin add cordova-plugin-network-information
-* npm install angular2-text-mask --save
 * npm install
 
 ## Execução
