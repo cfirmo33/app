@@ -1,0 +1,41 @@
+/*.app-background {
+  background: url('../assets/img/back.png') no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}*/
+.logo {
+  width:128px;
+	height:138px;
+	position:absolute;
+	top:15%;
+	left:45%;
+	margin-top:-50px;
+	margin-left:-50px;
+}
+
+button{
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+p{
+  padding-top: 180px;
+  padding-bottom: 15px;
+  font-size: 22px;
+  text-align: center;
+  text-decoration: none;
+  color: #f78300;
+}
+
+.brandPrincipal {
+  font-size: 30px;
+}
+
+.toolBar {
+  background-color: #f78300;
+}
+
+.buttonsToolbar {
+  font-size: 12px;
+}

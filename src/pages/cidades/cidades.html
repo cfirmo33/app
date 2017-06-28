@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title text-center>Cidades</ion-title>
+  </ion-navbar>
+
+  <ion-toolbar>
+      <ion-searchbar placeholder="Digite o nome da Cidade..."
+                     [(ngModel)]="queryText"
+                     (ionInput)="filterCid($event)"
+                     clearInput
+                     class="customInputs">
+      </ion-searchbar >
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content class="cardCidades">
+
+    <ion-list>
+      <ion-item no-lines *ngFor="let cidade of cidades" (click)="setCidade($event, cidade)">
+        <h3>{{cidade}}</h3>
+      </ion-item>
+    </ion-list>
+
+
+</ion-content>

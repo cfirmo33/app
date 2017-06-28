@@ -1,0 +1,49 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title text-center>Notificações</ion-title>
+  </ion-navbar>
+
+  <ion-toolbar>
+    <ion-item>
+      <ion-label>Estado</ion-label>
+      <ion-select [(ngModel)]="this.estado" (ngModelChange)="onEstadoChange($event, estado)" cancelText="Cancelar" okText="OK">
+
+        <ion-option *ngFor="let item of allEstados; let i=index" value="{{item.nome}}">
+          {{item.nome}}
+        </ion-option>
+
+      </ion-select>
+    </ion-item>
+
+    <ion-searchbar  *ngIf="estado"
+                    placeholder="Digite o nome da Cidade..."
+                   [(ngModel)]="queryText"
+                   (ionInput)="filterCid($event)"
+                   clearInput
+                   class="customInputs">
+    </ion-searchbar >
+  </ion-toolbar>
+
+
+
+</ion-header>
+
+
+<ion-content class="cardCidades">
+  <br> <br> <br>
+  <div *ngIf="estado" class="divCidades">
+    <ion-list>
+      <ion-item *ngFor="let item of cidades">
+        <ion-label>{{item}}</ion-label>
+        <ion-checkbox (ionChange)="checkBoxClick(item, estado)" checked="{{cidadeChecada(item, estado)}}" color="primary"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+  </div>
+
+
+</ion-content>
+
+<ion-footer bottom>
+  <button icon-left ion-button (click)="saveCidades()" class="buttonDefault"><ion-icon icon-right name="md-checkmark"></ion-icon>Salvar</button>
+</ion-footer>

@@ -1,0 +1,24 @@
+<div *ngIf="!isOnline">
+  <ion-header>
+
+    <ion-navbar color="primary">
+      <ion-title>99jus</ion-title>
+    </ion-navbar>
+
+  </ion-header>
+
+  <div class="semInternet">
+    <h2 color="primary" text-center>Seu aparelho está sem internet :(</h2>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button class="buttonDefault" (click)='goApp()'>Já tenho internet :)</button>
+      </ion-col>
+    </ion-row>
+  </div>
+
+</div>
+
+<div *ngIf="isOnline">
+  <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+</div>

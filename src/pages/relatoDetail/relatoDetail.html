@@ -1,0 +1,27 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title text-center>Detalhes do Relato</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content  padding>
+
+  <ion-card class="cardRelatoDetail">
+  <ion-card-content>
+      <h3 text-center>{{relato.nome}}</h3>
+
+      <h2 text-center class="datasRelato">{{relato.data}} - {{relato.hora}}:{{relato.minutos}}:{{relato.segundos}} - {{relato.cidade}} - {{relato.estado}}</h2>
+
+      <div class="relato">
+        {{relato.relato}}
+      </div>
+
+      <button ion-button icon-left color="primary" outline><ion-icon name="md-call"></ion-icon>{{relato.telefone}}</button>
+      <button ion-button icon-left color="primary" outline><ion-icon name="md-mail"></ion-icon>{{relato.email}}</button>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

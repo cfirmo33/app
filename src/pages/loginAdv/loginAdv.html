@@ -1,0 +1,53 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title text-center>Sou Advogado</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="app-background" padding>
+
+
+  <ion-row>
+    <ion-col>
+      <ion-list inset>
+        <ion-item>
+          <ion-label class="labelLogin">Email</ion-label>
+          <ion-input placeholder="email@email.com.br" [(ngModel)]="username"  type="email" clearInput class="customInputs"></ion-input>
+        </ion-item>
+
+        <ion-row>
+          <ion-item>
+            <ion-label class="labelLogin">Senha</ion-label>
+            <ion-input placeholder="mínimo 6 dígitos"  [(ngModel)]="password" minlength="6" type="{{type}}" class="customInputs"></ion-input>
+            <ion-toggle (ionChange)="toggleShow()"></ion-toggle>
+          </ion-item>
+        </ion-row>
+
+
+      </ion-list>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <button ion-button class="buttonDefault" (click)='login()'>Login</button>
+    </ion-col>
+  </ion-row>
+
+
+  <ion-row>
+    <ion-col>
+      <button ion-button class="buttonDefault" (click)='getNewPassword()'>Esqueci minha senha</button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <button ion-button class="buttonDefault" (click)='goToNewAdv()'>Criar conta</button>
+    </ion-col>
+  </ion-row>
+
+
+</ion-content>

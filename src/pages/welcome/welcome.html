@@ -1,0 +1,36 @@
+<ion-content class="app-background" padding>
+
+  <img src="./assets/img/logo1.png" class="logo" />
+
+  <p class="brandPrincipal" color="99jus">
+    Fale agora com um advogado
+  </p>
+
+  <ion-row>
+    <button  class="buttonDefault"  color="99jus" ion-button icon-left (click)="openAdvPage()">
+      <ion-icon name="md-mail"></ion-icon> Sou Advogado
+    </button>
+  </ion-row>
+
+  <ion-row>
+    <button  class="buttonDefault"  color="99jus" ion-button icon-left (click)="openCliPage()">
+      <ion-icon name="md-mail"></ion-icon> Quero um Advogado
+    </button>
+  </ion-row>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar class="toolBar" color="99jus">
+    <ion-buttons>
+      <button class="buttonsToolbar" icon-left ion-button icon-only (click)="openSite('http://www.99jus.com.br/')">
+        <ion-icon name="md-globe"></ion-icon>Site
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button class="buttonsToolbar" icon-left ion-button icon-only (click)="openSite('http://www.99jus.com.br/termos')">
+        <ion-icon name="md-hammer"></ion-icon>Termos de Uso
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

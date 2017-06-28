@@ -1,0 +1,65 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title text-center>{{nome}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="app-background" padding>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Puxe para atualizar"
+      refreshingSpinner="circles"
+      refreshingText="Atualizando relatos...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-row>
+    <ion-col>
+      <button ion-button class="buttonDefault" (click)='goToPerfil()'>Editar Perfil</button>
+    </ion-col>
+  </ion-row>
+
+
+<!--  <ion-toolbar color="primary" > <ion-title text-center>Casos e Diligências</ion-title></ion-toolbar>-->
+    <div *ngIf="temRelato">
+      <ion-card *ngFor="let item of relatos" class="cardRelato">
+
+        <ion-card-content>
+          <div>
+            <h3 text-center >{{item.nome}}</h3>
+
+            <h2 text-center class="datas">{{item.data}} - {{item.hora}}:{{item.minutos}}:{{item.segundos}} - {{item.cidade}} - {{item.estado}}</h2>
+
+            <br>
+
+            <div>
+              {{copyRelato(item.relato)}}...
+            </div>
+
+
+          <div>
+            <ion-icon left name="md-eye"></ion-icon> {{item.quantidadeVisualizacoes}} visualização(ões)
+          </div>
+
+
+            <button  class="buttonDefault" ion-button icon-left full (click)="goToRelatoDetail($event, item, item.chaveDoRelato, item.quantidadeVisualizacoes)">
+                <ion-icon name="md-search"></ion-icon>
+                Detalhes
+            </button>
+          </div>
+
+        </ion-card-content>
+
+
+      </ion-card>
+    </div>
+
+    <div *ngIf="!temRelato" class="alert">
+      Você não tem relatos para as Cidades selecionadas em seu Perfil de Notificações :(
+    </div>
+
+</ion-content>

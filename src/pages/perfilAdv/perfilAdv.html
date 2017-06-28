@@ -1,0 +1,99 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title text-center>Perfil Advogado</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <div class="badges">
+      <ion-badge *ngIf="!pagante" color="danger" >FREE</ion-badge>
+      <ion-badge *ngIf="pagante" color="green" >PRO</ion-badge>
+    </div>
+    <br>
+    <ion-list inset>
+
+      <ion-item>
+        <ion-label>Email</ion-label>
+        <ion-input
+            [(ngModel)]="username"
+            [disabled]="true"
+            type="email"
+            enabled="false"
+            clearInput
+            class="customInputs"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Nome</ion-label>
+        <ion-input [(ngModel)]="nome" type="text" [disabled]="false" clearInput class="customInputs"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>CPF</ion-label>
+        <ion-input
+            placeholder="não obrigatório"
+            [(ngModel)]="cpf"
+            type="tel"
+            [disabled]="false"
+            class="customInputs"
+            [textMask]="{mask:cpfMask}"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Número OAB</ion-label>
+        <ion-input [(ngModel)]="oab"  type="number"  [disabled]="false" class="customInputs"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Telefone</ion-label>
+        <ion-input [(ngModel)]="telefone"
+                   type="tel"
+                   [disabled]="false"
+                   class="customInputs"
+                   [textMask]="{mask:phoneNumberMask}"
+                   (blur)="maskTel($event)"
+                   (focus)="setLength()"></ion-input>
+      </ion-item>
+
+      <ion-item item-left>
+        <ion-label>Estado</ion-label>
+        <ion-input placeholder="selecione aqui seu Estado"  [(ngModel)]="estado" type="text" (click)='openModalEstado($event)' [disabled]="true"  enabled="false" class="customInputs">{{estado}}</ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Cidade</ion-label>
+        <ion-input placeholder="selecione aqui sua Cidade" [(ngModel)]="cidadeEscolhida" (click)='openModalCidades($event, estado)' [disabled]="true" type="text" enabled="false" class="customInputs">{{cidadeEscolhida}}</ion-input>
+      </ion-item>
+
+      <div class="tituloBadgeCidades">
+        <ion-badge >
+          Notificações
+        </ion-badge>
+      </div>
+
+      <div>
+        <ion-badge class="badgeCidades" *ngFor="let item of cidadesNotificacao">
+          {{item}}
+        </ion-badge>
+      </div>
+      <br>
+
+      <ion-row>
+        <ion-col>
+          <button ion-button class="buttonDefault" (click)='goToCidadesNotificacao()'>Notificações </button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <button ion-button class="buttonDefault" (click)='updateAdv()'>Salvar </button>
+        </ion-col>
+      </ion-row>
+
+    </ion-list>
+
+</ion-content>

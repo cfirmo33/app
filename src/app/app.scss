@@ -1,0 +1,171 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+.tituloBadgeCidades {
+  position: relative;
+  top: 50%;
+  left: 70px;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+.badgeCidades {
+  font-size: 10px;
+  background: #ededed;
+  color:  #f78300;
+}
+
+.relato {
+  color: #000;
+}
+
+.cardRelato {
+  color: #f78300;
+  background: #ededed;
+  margin: 20px 10px;
+  border-radius: 4px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+  div {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  h2 {
+    color: #000;
+    font-size: 12px;
+  }
+}
+
+.cardRelatoDetail {
+  color: #f78300;
+  margin: 20px 10px;
+  border-radius: 4px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+  div {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  h2 {
+    color: #000;
+    font-size: 12px;
+  }
+}
+
+.semInternet{
+  padding-top: 65px;
+
+  h2 {
+    font-size: 12px;
+  }
+}
+
+.labelLogin {
+  font-size: 16px;
+}
+
+.customInputs {
+  font-size: 16px;
+}
+
+.fab {
+  box-shadow: 0px 3px 2px 2px black;
+}
+
+.comboEstado {
+  width: 100%;
+}
+
+.buttonMenu {
+  text-align: center;
+  color : #ffffff !important;
+}
+
+.cardCidades{
+  h3 {
+    font-size: 15px;
+    font-weight: bold;
+    padding-left: 15px;
+    padding-top: 15px;
+    color: #022e39
+  }
+}
+
+.divCidades{
+  h3 {
+    font-size: 15px;
+    font-weight: bold;
+    padding-left: 15px;
+    padding-top: 40px;
+    color: #022e39
+  }
+}
+
+.buttonDefault {
+  width: 100%;
+  border-radius: 30px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  border: 1px solid #fff;
+  background-color: #f78300;
+
+
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); //0 3px 0 #f78300;
+
+    &:active{
+          position:relative;
+          top:3px;
+          box-shadow:none;
+    }
+
+}
+
+.buttonSmall {
+  border-radius: 30px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  border: 1px solid #fff;
+  background-color: #f78300;
+}
+
+button[ion-fab] {
+    overflow: visible;
+    position: relative;
+
+    ion-label {
+        position: absolute;
+        top: -8px;
+        right: 40px;
+
+        color: white;
+        background-color: rgba(0,0,0,0.7);
+        line-height: 24px;
+        padding: 4px 8px;
+        border-radius: 4px;
+    }
+}
